@@ -12,10 +12,10 @@ int main (){
             }
             else{
                 if (col == 0||col == n-1){
-                    cout << "* ";
+                    cout << "* ";  
                 }
                 else{
-                    cout << "  " ;
+                    cout << "  " ; //take tow spaces.
                 }
                 
             }
