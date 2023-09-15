@@ -16,7 +16,7 @@ int main (){
         cout << endl;
     } 
 //for lower full pyramid
-    for(int row=0; row<n; row++){
+    for(int row=0; row<n; row++){              //row = 1 kore dilei nicher loop er ekta extra line chole jabe .
         //for space printing
         for(int col=0; col<row; col++){
             cout << " " ; //one space 
