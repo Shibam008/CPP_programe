@@ -6,7 +6,7 @@ void extremePrint(int arr[], int size){
     int right = size-1;
     while(left<=right){
 
-        if(left == right){   //for odd size array
+    if(left == right){   //for odd size array
         cout<<arr[left]<<" ";  
     } 
     else{
