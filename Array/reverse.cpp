@@ -14,8 +14,8 @@ int reverseArray(int arr[], int size){
 }
 
 int main(){
-    int arr[]={10,20,30,40,50,};
-    int size = 5;
+    int arr[]={10,20,30,40,50,60};
+    int size = 6;
 
     reverseArray(arr,size);
 
