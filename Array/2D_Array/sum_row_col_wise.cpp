@@ -14,10 +14,10 @@ void rowwisesum(int arr[][4], int row, int col){
 
 void colwisesum(int arr[][4], int row, int col){
 
-    for(int i=0; i<col; i++){
+    for(int j=0; j<col; j++){
         int sum = 0;        
-        for(int j=0; j<row; j++){
-            sum = sum+arr[j][i];
+        for(int i=0; i<row; i++){
+            sum = sum+arr[i][j];
         }
         cout << "Column wise sum -> "<<sum<<endl;
     }
@@ -29,6 +29,7 @@ int main(){
         {50,60,70,80},
         {15,25,35,45}
     };
+
     int row=3, col=4;
 
     rowwisesum(arr,row,col);
