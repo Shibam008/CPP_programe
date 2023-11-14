@@ -7,19 +7,16 @@ int prefixSumApproch(vector<int> &nums){
     vector<int>rsum(nums.size(), 0);
 
     for(int i=1; i<nums.size(); i++){
-        lsum[i] = lsum[i-1] + nums[i-1];
-        cout<<lsum[i]<<" ";
+        lsum[i] = lsum[i-1] + nums[i-1]; 
     }
-cout<<endl;
+
     for(int i=nums.size()-2; i>=0; i--){
-        rsum[i] = rsum[i+1] + nums[i+1];
-        cout<<rsum[i]<<" ";
+        rsum[i] = rsum[i+1] + nums[i+1]; 
     }
-cout<<endl;
+
     for(int i=0; i<nums.size(); i++){
         if(lsum[i] == rsum[i])
         cout<<"Pivot index is = "<<i<<endl;
-    
     }
 }
 
@@ -33,10 +30,6 @@ int main(){
     nums.push_back(6);
 
 prefixSumApproch(nums);
-
-    // for(int i=0; i<nums.size(); i++){
-    //     cout<<nums[i]<<" ";
-    // }
 
 return 0;
 }
