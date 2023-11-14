@@ -8,7 +8,6 @@ int sortcolors(vector<int> &nums){ //in-place method.
         if(nums[mid]==0){
             swap(nums[left],nums[mid]);
             left++, mid++;
-            
         }
         else if(nums[mid]==1){
             mid++;
