@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+
+//Dutch national flag algorithm
+
 int moveleft(int nums[], int size){
     int l=0, h = size-1;
 
