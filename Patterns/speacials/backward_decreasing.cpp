@@ -6,7 +6,7 @@ int main(){
     cin>>n;
     for(int row=0; row<n; row++){
         for(int col = n-row; col>=1; col--){
-            cout<<col<<" ";
+            cout<<col<<" "; // cout<<char(col+64)<<" ";
         }
         cout<<endl;
     }
