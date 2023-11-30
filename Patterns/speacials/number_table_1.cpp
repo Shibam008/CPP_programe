@@ -4,14 +4,13 @@ int main(){
     int n;
     cout<<"enter number of rows : ";
     cin>>n;
-
+// first row 
     for(int i=1; i<=(2*n)-1; i++){
         cout<<i<<" ";
     }
     cout<<endl;
 
-
-// int a=1;
+//second half
 
     for(int row=0; row < n-1; row++){
         int a=1;
