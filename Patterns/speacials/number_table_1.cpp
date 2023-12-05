@@ -1,3 +1,7 @@
+//1 2 3 4 5 6 7
+//1 2 3   5 6 7
+//1 2       6 7
+//1           7
 #include<iostream>
 using namespace std;
 int main(){
@@ -12,9 +16,9 @@ int main(){
 
 //second half
 
-    for(int row=0; row < n-1; row++){
+    for(int row=0; row < (n-1); row++){
         int a=1; // we have to initialize this variable inside the loop.
-        for(int col=0; col<n-row-1; col++){
+        for(int col=0; col< (n-1)-row; col++){
             cout<<a<<" ";
             a++;
         }
@@ -22,7 +26,7 @@ int main(){
             cout<<"  ";
             a++;
         }
-        for(int col=0; col<n-row-1; col++){
+        for(int col=0; col< (n-1)-row; col++){
             cout<<a<<" ";
             a++;
         }
