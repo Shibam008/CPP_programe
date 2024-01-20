@@ -30,6 +30,8 @@ int main(){
 //We have left with PEAK element and Part B.
 //IN part B there are {70, 50, 40, 30}, and this is completely visible that || arr[i] > arr[i+1] || .
 
+// arr[mid-1] < arr[mid] > arr[mid+1]  --> arr[mid] = PEAK
+
 //when we calculate mid, if we stay in part A our peak element should stay in right side that's why we shift our start(s) to the right . (s = mid + 1);
 
 // else there would be two cases - 
