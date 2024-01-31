@@ -30,8 +30,13 @@ int main(){
     cin>>num;
     vector<int> result = large_fact(num);
 
-    for(int i=0; i<result.size(); i++){  // chat gpt helps me to write the correct loop condition that is    [i < result.size()]    but I was writing   [i < num]   which is wrong
+    for(int i=0; i<result.size(); i++){  
         cout<<result[i];
     }
+    
     return 0;
 }
+
+// chat gpt helps me to write the correct loop condition that is    [i < result.size()]    but I was writing   [i < num]   which is wrong
+
+//Here, num is the input number, and you are using it as the loop condition to iterate over the result vector. The problem is that result may have more digits than the original num. For example, if num is 5, and the factorial result is 120, then result will have three digits (1, 2, 0), but your loop is only going up to num, which is 5. This causes an out-of-bounds access when you try to access result[3] and result[4].
