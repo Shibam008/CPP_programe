@@ -9,6 +9,8 @@ Example = [ 24/12 = 2 ] , we have to return 2 (or the nearest integer)
 Formula (1) =>   (Quotient * Divisor) + Remainder = Dividend
 
 Formula (2) =>   (Quotient * Divisor)  <= Dividend (**********)
+
+Time complexity = O(logn) [where n reffers dividend]
 */
 
 #include<bits/stdc++.h>
