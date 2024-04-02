@@ -7,10 +7,10 @@ vector<bool> Seive_of_Era(int n){
     vector<bool> seive(n+1, true);
     seive[0] = seive[1] = false;
 
-    for(int i=2; i<=n; i++){
+    for(int i=2; i<=sqrt(n); i++){  // instead of sqrt(n) we can use {i*i <= n}
         if(seive[i] == true){
 
-            int j = i*2;
+            int j = i*i; // for overcoming redundency 
 
             while(j <= n){
                 seive[j] = false;
