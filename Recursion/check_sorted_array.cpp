@@ -9,8 +9,7 @@ bool checkSorted(int *arr, int size, int index){
 
     if(arr[index] > arr[index-1]){
         //ckeck again
-        bool nextAns = checkSorted(arr, size, index+1);
-        return nextAns;
+        return checkSorted(arr, size, index+1);  // recursive call
     }
     else{
         return false;
