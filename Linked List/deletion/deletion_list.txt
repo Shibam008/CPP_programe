@@ -1,0 +1,48 @@
+
+
+**) Handle (Empty Linked) list
+
+**) Handle (Single elemnt) in a list
+
+A) Delete from head : (position == 1)
+
+        1). Make a temp node for head. (Node* temp = head)
+        2). So now temp->next will be new head
+        3). Isolate temp node from LL by pointing it to NULL
+        4). delete temp  (when we free dynamically allocated memory, destructor will be automatically called)
+
+
+
+B) Delete from tail : (position == len)
+
+    1). We have to travarse the LL and go up to second last node and mark that node = (prev)
+         it means we will increment (prev)  (prev = prev->next) until the next node of (prev) will be the tail node.
+
+    2). Now point prev->next = NULL
+    3). delete tail
+    4). Update tail (tail = prev)
+
+
+
+C) Delete from any position 
+
+        1). travarse LL and set cuur/prev according to given position
+        2). set prev->next = curr->next
+        3). curr->next = NULL 
+        4). delete curr
+
+
+
+// test case for single element
+
+        insertAtTail(head, tail, 20);
+
+        printLL(head);
+        cout<<endl;
+
+        cout << tail->data <<endl;
+        deleteNode(head, tail, 1);
+        cout << tail->data <<endl;
+
+        printLL(head);
+        cout<<endl;
