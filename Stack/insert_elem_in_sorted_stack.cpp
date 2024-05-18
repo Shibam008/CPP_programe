@@ -2,7 +2,7 @@
 using namespace std;
 void insertAtSortedStack(stack<int> &st, int element) {
     // base case
-    if(element > st.top()) {
+    if(st.empty() || element > st.top()) {  // **** handle empty case is the most imp part
         st.push(element);
         return;
     }
