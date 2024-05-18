@@ -1,0 +1,19 @@
+A).Solution of the problem " Reverse Stack " :-
+    step 1 :
+        we have to write a base case.
+    step 2 :
+        now store the top element and pop it.
+        and call the function recursively.
+    step 3 :
+        we will insert the top element at bottom .
+
+
+
+B).Solution of "Sort Stack" or "Insert element at sorted stack" :-
+    step 1:
+        in base case we have to check ***[ st.empty() ]*** the most important part and gamechanger point.
+    step 2:
+        now store the top element and pop it.
+        and call the function recursively.
+    step 3:
+        we will insert element like "Insert element at sorted stack"
