@@ -1,111 +1,121 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 class Node {
-    public:
+public:
     int data;
     Node* next;
 
-    Node(){
-        this -> next = NULL;
+    Node() {
+        this->next = NULL;
     }
-    Node(int data){
-        this -> data = data;
-        this -> next = NULL;
+
+    Node(int val) {
+        this->data = val;
+        this->next = NULL;
     }
 };
 
-int findLength(Node* head){
+void insertAtHead(Node* &head, Node* &tail, int val) 
+{
+    if(head == NULL) 
+    {
+        Node *newNode = new Node(val);
+        head = tail = newNode;
+    }
+    else
+    {
+        Node *newNode = new Node(val);
+        newNode->next = head;
+        head = newNode;
+    }
+}
+
+void insertAtTail(Node* &head, Node* &tail, int val)  
+{
+    if(head == NULL) 
+    {
+        Node* newNode = new Node(val);
+        head = tail = newNode;
+    }
+    else
+    {
+        Node* newNode = new Node(val);
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
+
+int getLen(Node* head) 
+{
     int len = 0;
     Node* temp = head;
-    while(temp != NULL){
+    while(temp != NULL) 
+    {
         temp = temp->next;
         len++;
     }
     return len;
 }
 
-void insertAtHead(Node* &head, Node* &tail, int data){
-    if(head == NULL){
-            Node* newNode = new Node(data);
-            head = tail = newNode;
-    }
-    else{
-            Node* newNode = new Node(data);
-            newNode->next = head;
-            head = newNode;
-    }
-}
+void insertAtAny(Node* &head, Node* &tail, int pos, int val) 
+{
+    int len = getLen(head);
 
-void insertAtTail(Node* &head, Node* &tail, int data){
-    if(head == NULL){
-            Node* newNode = new Node(data);
-            head = tail = newNode;
-    }
-    else{
-            Node* newNode = new Node(data);
-            tail->next = newNode;
-            tail = newNode;
-    }
-}
-
-void insertAtAny(Node* &head, Node* &tail, int data, int position){
-    
-    int len = findLength(head);
-
-    if(position == 1){
-        insertAtHead(head, tail, data);
+    if(pos == 1) 
+    {
+        insertAtHead(head, tail, val);
         return;
     }
-
-    else if(position > len){
-        insertAtTail(head, tail, data);
+    else if(pos == len+1)
+    {
+        insertAtTail(head, tail, val);
         return;
     }
+    else if(pos > len+1 || pos < 1) 
+    {
+        cout << "Invalid position!" << endl;
+        exit(1);
+    }
+    else
+    {
+        Node* newNode = new Node(val);
 
-    else{
-            Node* newNode = new Node(data);
-
-            Node* prev = NULL;
-            Node* curr = head;
-
-            while(position != 1){
-                position--;
-                prev = curr;
-                curr = curr->next;
-            }
-
-            prev->next = newNode;
-            newNode->next = curr;
+        Node* prev = NULL;
+        Node* curr = head;
+        while(pos != 1) 
+        {
+            pos--;
+            prev = curr;
+            curr = curr->next;
+        }
+        prev->next = newNode;
+        newNode->next = curr;
     }
 }
 
-void printLL(Node* head){
+void display(Node* head)
+{
     Node* temp = head;
-    while(temp != NULL){
-            cout << temp->data <<" ";
-            temp = temp->next; 
+    while(temp != NULL) 
+    {
+        cout << temp->data << "->";
+        temp = temp->next;
     }
 }
 
-int main(){
 
-    // here we are considering the range of length = (1 - len+1)
+int main() {
     Node* head = NULL;
     Node* tail = NULL;
-        insertAtTail(head, tail, 20);
-        insertAtTail(head, tail, 50);
-        insertAtTail(head, tail, 60);
-        insertAtTail(head, tail, 90);
-        insertAtHead(head, tail, 77);
 
-        printLL(head);
-        cout<<endl;
+    insertAtHead(head, tail, 15);
+    insertAtHead(head, tail, 13);
+    insertAtHead(head, tail, 12);
+    insertAtHead(head, tail, 18);
+    insertAtHead(head, tail, 16);
 
-        insertAtAny(head, tail, 500, 2);
+    insertAtAny(head, tail, 5, 58);
 
-        printLL(head);
-        cout<<endl;
-
-    return 0;
+    display(head);
 }
