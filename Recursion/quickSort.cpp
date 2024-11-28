@@ -23,10 +23,10 @@ int partition(int arr[], int s, int e) {
     while(i < pivotIdx && j > pivotIdx) 
     {
         while(arr[i] <= pivot) i++;
-        while(arr[j] > pivot) j++;
+        while(arr[j] > pivot) j--;
 
         if(i < pivotIdx && j > pivotIdx) {
-            swap(arr[i], arr[j]);
+            swap(arr[i++], arr[j--]);
         }
     }
 
